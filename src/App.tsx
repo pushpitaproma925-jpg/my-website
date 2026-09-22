@@ -44,8 +44,8 @@ type Project = {
 type Certificate = {
   title: string;
   issuer: string;
-  date: string;
-  credential: string;
+  year: string;
+  image: string;
 };
 
 const profile = {
@@ -214,18 +214,33 @@ function SectionHeading({
     </div>
   );
 }
-
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const [selectedCertificate, setSelectedCertificate] =
+    useState<Certificate | null>(null);
+
   const [filter, setFilter] = useState("All");
 
-  const categories = ["All", "Engineering", "Web", "Research", "Academic"];
+  const categories = [
+    "All",
+    "Engineering",
+    "Web",
+    "Research",
+    "Academic",
+  ];
+
   const visibleProjects =
-    filter === "All" ? projects : projects.filter((p) => p.category === filter);
+    filter === "All"
+      ? projects
+      : projects.filter((p) => p.category === filter);
 
   const goTo = (id: string) => {
     setMenuOpen(false);
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+    });
   };
 
   return (
