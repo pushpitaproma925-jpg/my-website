@@ -65,27 +65,28 @@ const profile = {
 
 const projects: Project[] = [
   {
-    title: "Smart Energy Meter + IoT",
+    title: " Patient Assistant System – Smart Gesture Gloves",
     description:
-      "A concept for monitoring electrical energy consumption and sending useful usage data through an IoT-enabled system.",
+      "Assistive Technology Project",
     tags: ["IoT", "ESP32", "Energy", "EEE"],
     category: "Engineering",
     github: "https://github.com/yourusername",
     demo: "#contact",
   },
   {
-    title: "Solar MPPT Charge Controller",
+    title: "Robotic Arm Using ESP32",
+  
     description:
-      "A solar charging project focused on extracting maximum available power from a photovoltaic source under changing conditions.",
-    tags: ["MPPT", "Solar", "Power Electronics"],
+      "Robotics & Embedded Systems.",
+    tags: ["MPPT", "Robotics", "Embedded System"],
     category: "Engineering",
     github: "https://github.com/yourusername",
     demo: "#contact",
   },
   {
-    title: "Transformer Health Monitoring",
+    title: " BCD to 7-Segment Display Decoder Using IC 4511",
     description:
-      "A proposed monitoring system for tracking transformer operating conditions and supporting early detection of abnormal behavior.",
+      "Digital Electronics Hardware",
     tags: ["Transformer", "Sensors", "Monitoring"],
     category: "Engineering",
     github: "https://github.com/yourusername",
@@ -297,12 +298,12 @@ function App() {
                   </button>
                 ))}
                 <a
-                  href={profile.cv}
-                  className="mt-2 inline-flex w-fit items-center gap-2 rounded-full bg-sky-400 px-4 py-2 text-sm font-bold text-slate-950"
-                >
-                  <Download size={16} />
-                  Download CV
-                </a>
+  href="/cv.pdf"
+  download
+  className="inline-flex items-center rounded-full bg-cyan-500 px-6 py-3 font-semibold text-white transition hover:bg-cyan-400"
+>
+  Download CV
+</a>
               </div>
             </motion.nav>
           )}
@@ -341,23 +342,24 @@ function App() {
                 engineering, software, problem-solving and technology while
                 turning ideas into meaningful projects.
               </p>
+               <div className="mt-9 flex flex-wrap gap-3">
+  <button
+    onClick={() => goTo("projects")}
+    className="inline-flex items-center gap-2 rounded-full bg-sky-400 px-6 py-3 font-bold text-slate-950 transition hover:-translate-y-0.5 hover:bg-sky-300"
+  >
+    Explore My Work
+    <ArrowUpRight size={18} />
+  </button>
 
-              <div className="mt-9 flex flex-wrap gap-3">
-                <button
-                  onClick={() => goTo("projects")}
-                  className="inline-flex items-center gap-2 rounded-full bg-sky-400 px-6 py-3 font-bold text-slate-950 transition hover:-translate-y-0.5 hover:bg-sky-300"
-                >
-                  Explore My Work
-                  <ArrowUpRight size={18} />
-                </button>
-                <a
-                  href={profile.cv}
-                  className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 font-bold text-white transition hover:bg-white/10"
-                >
-                  <Download size={18} />
-                  Download CV
-                </a>
-              </div>
+  <a
+    href="/cv.pdf"
+    download
+    className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 font-bold text-white transition hover:bg-white/10"
+  >
+    <Download size={18} />
+    Download CV
+  </a>
+</div>
 
               <div className="mt-9 flex items-center gap-4">
                 <a
